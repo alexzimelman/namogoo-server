@@ -25,6 +25,9 @@ app.listen(PORT, function() {
     console.log("App is listening on port ", PORT)
 });
 
+// Init database with contacts.json data
+require('./src/scripts/initDbByJson')(db)
+
 
 
 

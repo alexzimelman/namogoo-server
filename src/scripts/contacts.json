@@ -1,0 +1,84 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Ms",
+        "first": "Sadie",
+        "last": "Davies"
+      },
+      "email": "sadie.davies@example.com",
+      "phone": "(737)-903-5990",
+      "cell": "(277)-816-9060",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/43.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/43.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/43.jpg"
+      }
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "Miss",
+        "first": "Eva",
+        "last": "Fields"
+      },
+      "email": "eva.fields@example.com",
+      "phone": "029 9191 6901",
+      "cell": "0739-043-882",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/67.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/67.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/67.jpg"
+      }
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "Ms",
+        "first": "Josefina",
+        "last": "Vidal"
+      },
+      "email": "josefina.vidal@example.com",
+      "phone": "954-141-415",
+      "cell": "679-457-720",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/5.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/5.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/5.jpg"
+      }
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Pero",
+        "last": "Wenig"
+      },
+      "email": "pero.wenig@example.com",
+      "phone": "0949-7318376",
+      "cell": "0176-5979313",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/63.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/63.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/63.jpg"
+      }
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Pero",
+        "last": "Wenig"
+      },
+      "email": "pero.wenig@example.com",
+      "phone": "0949-7318376",
+      "cell": "0176-5979313",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/63.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/63.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/63.jpg"
+      }
+    }
+  ]
+}

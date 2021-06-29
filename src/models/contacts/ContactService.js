@@ -6,9 +6,50 @@ class ContactService {
         this.db = db;
     }
 
-    async getContactsList(name) {
+    async getContactsList(filter) {
         try {
-            return await this.db.Contact.find({})
+            let query = []
+            let queryProject = {
+                $project: {
+                    _id: 1,
+                    gender: 1,
+                    name: 1,
+                    email: 1,
+                    phone: 1,
+                    cell: 1,
+                    picture: 1,
+                    lowerCaseFirstName:{ "$toLower": "$name.first" }
+                }
+            }
+            let querySort = {
+                $sort: {"lowerCaseFirstName": 1}
+            }
+            query.push(queryProject)
+            if(filter.filter){
+                query.push({
+                    $match: {
+                        $or: [
+                            {
+                                "name.first": {"$regex": filter.filter, "$options": "i"}
+                            },
+                            {
+                                "name.last": {"$regex": filter.filter, "$options": "i"}
+                            },
+                            {
+                                "cell": {"$regex": filter.filter, "$options": "i"}
+                            },
+                            {
+                                "phone": {"$regex": filter.filter, "$options": "i"}
+                            },
+                            {
+                                "email": {"$regex": filter.filter, "$options": "i"}
+                            }
+                        ]
+                    }
+                })
+            }
+            query.push(querySort)
+            return await this.db.Contact.aggregate(query)
         } catch (e) {
             throw e;
         }
@@ -16,21 +57,11 @@ class ContactService {
 
     async deleteContact(contactId) {
         try {
-            return await this.db.Contact.findByIdAndUpdate(contactId, {isActive: false}, {new: true});
+            return await this.db.Contact.findByIdAndRemove(contactId);
         } catch (e) {
             throw e;
         }
     }
-
-    async resetContacts() {
-        try {
-            await this.db.Contact.updateMany({isActive: false}, {isActive: true}, {new: true});
-            return this.getContactsList()
-        } catch (e) {
-            throw e;
-        }
-    }
-
 }
 
 module.exports = (db) => {

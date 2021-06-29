@@ -5,9 +5,9 @@ class ContactController {
         this.db = db;
     }
 
-    async getContactsList(name) {
+    async getContactsList(filter) {
         try {
-            return await ContactService(this.db).getContactsList(name);
+            return await ContactService(this.db).getContactsList(filter);
         } catch (e) {
             throw e;
         }
@@ -20,15 +20,6 @@ class ContactController {
             throw e;
         }
     }
-
-    async resetContacts() {
-        try {
-            return await ContactService(this.db).resetContacts();
-        } catch (e) {
-            throw e;
-        }
-    }
-
 }
 
 module.exports = (db) => {
